@@ -2,9 +2,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vitvisor – Retro-Gamer Tech</title>
+<title>Vitvisor – Retro-Gamer Arcade</title>
 <style>
-/* Fuente retro */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
@@ -12,6 +11,32 @@ body {
   font-family: 'Press Start 2P', cursive;
   background: #0b0c10;
   color: #c5c6c7;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Scanlines CRT */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    rgba(0,0,0,0.05) 0px,
+    rgba(0,0,0,0.05) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Parpadeo de texto */
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
 }
 
 header {
@@ -42,9 +67,7 @@ nav ul {
   padding: 0;
 }
 
-nav ul li {
-  margin-left: 20px;
-}
+nav ul li { margin-left: 20px; }
 
 nav ul li a {
   color: #66fcf1;
@@ -52,10 +75,7 @@ nav ul li a {
   transition: 0.3s;
 }
 
-nav ul li a:hover {
-  color: #45a29e;
-  text-shadow: 0 0 5px #45a29e;
-}
+nav ul li a:hover { color: #45a29e; text-shadow: 0 0 5px #45a29e; }
 
 .hero {
   background: url('https://i.imgur.com/kd3X2vU.png') center/cover no-repeat;
@@ -68,12 +88,10 @@ nav ul li a:hover {
 .hero h1 {
   font-size: 2em;
   margin-bottom: 20px;
+  animation: blink 1s infinite;
 }
 
-.hero p {
-  max-width: 700px;
-  margin: 0 auto 30px;
-}
+.hero p { max-width: 700px; margin: 0 auto 30px; }
 
 .btn {
   display: inline-block;
@@ -84,20 +102,18 @@ nav ul li a:hover {
   border-radius: 4px;
   font-weight: bold;
   transition: 0.3s;
+  box-shadow: 0 0 10px #45a29e, 0 0 20px #66fcf1;
 }
 
-.btn:hover {
-  background: #66fcf1;
-}
+.btn:hover { box-shadow: 0 0 20px #45a29e, 0 0 30px #66fcf1; }
 
-section {
-  padding: 60px 20px;
-}
+section { padding: 60px 20px; }
 
 h2 {
   text-align: center;
   color: #66fcf1;
   margin-bottom: 40px;
+  animation: blink 2s infinite;
 }
 
 .services, .team, .noticias-list {
@@ -120,6 +136,7 @@ h2 {
 .service:hover, .member:hover, .noticia:hover {
   background: #0b0c10;
   border-color: #66fcf1;
+  box-shadow: 0 0 15px #66fcf1;
 }
 
 .service h3, .member h4, .noticia h3 {
@@ -143,20 +160,31 @@ footer {
   border-top: 4px solid #66fcf1;
 }
 
-footer a {
-  color: #45a29e;
-  text-decoration: none;
+footer a { color: #45a29e; text-decoration: none; }
+footer a:hover { color: #66fcf1; }
+
+/* Noticias animadas */
+.noticias-scroll {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
 }
 
-footer a:hover {
-  color: #66fcf1;
+.noticias-inner {
+  display: flex;
+  animation: scrollLeft 15s linear infinite;
+  gap: 20px;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
 
 @media (max-width: 768px) {
-  .services, .team, .noticias-list {
-    flex-direction: column;
-    align-items: center;
-  }
+  .services, .team, .noticias-inner { flex-direction: column; align-items: center; }
+  .noticias-inner { animation: none; }
 }
 </style>
 </head>
@@ -219,21 +247,24 @@ footer a:hover {
 
 <section id="noticias">
   <h2>Últimas Entradas</h2>
-  <div class="noticias-list">
-    <div class="noticia">
-      <h3>Nuevo Curso de Redes Pixeladas</h3>
-      <p>Aprende a configurar routers, switches y redes virtuales con nuestro nuevo módulo retro. ¡Nivel Boss desbloqueado!</p>
-      <a class="btn" href="#">Leer Más</a>
-    </div>
-    <div class="noticia">
-      <h3>Tips de Programación Retro</h3>
-      <p>Trucos y hacks para dominar HTML, CSS y JavaScript con un estilo pixel-art que recuerda los 80s.</p>
-      <a class="btn" href="#">Leer Más</a>
-    </div>
-    <div class="noticia">
-      <h3>Soporte Tech Arcade</h3>
-      <p>Atención a problemas de sistemas con estrategias tipo juego: cada fallo es un mini-jefe a superar.</p>
-      <a class="btn" href="#">Leer Más</a>
+  <div class="noticias-scroll">
+    <div class="noticias-inner">
+      <div class="noticia">
+        <h3>Nuevo Curso de Redes Pixeladas</h3>
+        <p>Aprende a configurar routers y redes virtuales con nuestro módulo retro. ¡Nivel Boss desbloqueado!</p>
+      </div>
+      <div class="noticia">
+        <h3>Tips de Programación Retro</h3>
+        <p>Trucos y hacks para dominar HTML, CSS y JS con un estilo pixel-art que recuerda los 80s.</p>
+      </div>
+      <div class="noticia">
+        <h3>Soporte Tech Arcade</h3>
+        <p>Atención a problemas de sistemas con estrategias tipo juego: cada fallo es un mini-jefe a superar.</p>
+      </div>
+      <div class="noticia">
+        <h3>Nuevas Misiones Tech</h3>
+        <p>Actualizaciones y retos semanales para mejorar tus habilidades de IT con estilo retro.</p>
+      </div>
     </div>
   </div>
 </section>
