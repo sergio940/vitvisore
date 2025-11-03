@@ -1,37 +1,158 @@
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device‑width, initial‑scale=1.0">
-  <title>Vitvisor – Formación Tecnológica</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* estilos básicos integrados para facilidad */
-    body { margin:0; font‑family: Arial, sans‑serif; line‑height:1.6; color:#333; }
-    header { background:#0a3d62; color:#fff; padding:20px 0; }
-    header .container { display:flex; align‑items:center; justify‑space-between; max‑width:1200px; margin:0 auto; padding:0 20px; }
-    header .logo { font‑size:1.8em; font‑weight:bold; }
-    nav ul { list‑style:none; margin:0; padding:0; display:flex; }
-    nav ul li { margin‑left:20px; }
-    nav ul li a { color:#fff; text‑decoration:none; }
-    .hero { background:#f4f6f8; padding:100px 20px; text‑align:center; }
-    .hero h1 { font‑size:2.8em; margin-bottom:20px; color:#0a3d62; }
-    .hero p { font-size:1.2em; max‑width:700px; margin:0 auto 30px auto; }
-    .btn { display:inline-block; padding:12px 30px; background:#0a3d62; color:#fff; text‑decoration:none; border‑radius:4px; }
-    .container { max‑width:1200px; margin:0 auto; padding:0 20px; }
-    section { padding:60px 0; }
-    .services { display:flex; flex‑wrap:wrap; gap:30px; justify‑space‑between; }
-    .service { flex:1 1 calc(33% ‑ 40px); background:#fff; border:1px solid #e1e1e1; border‑radius:8px; padding:30px; text‑align:center; }
-    .service h3 { margin‑20px 0 10px; color:#0a3d62; }
-    .team { display:flex; flex‑wrap:wrap; gap:30px; justify‑space‑between; }
-    .member { flex:1 1 calc(50% ‑ 40px); text‑align:center; }
-    .member img { width:150px; height:150px; border‑radius:50%; }
-    footer { background:#333; color:#ccc; padding:40px 0; text-align:center; }
-    footer a { color:#ccc; text‑decoration:none; }
-    @media (max‑768px) {
-      .services, .team { flex‑direction:column; }
-      .service, .member { flex:1 1 100%; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitvisor – Formación Retro-Gamer</title>
+<style>
+/* Fuente retro */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  background: #0b0c10;
+  color: #c5c6c7;
+}
+
+header {
+  background: #1f2833;
+  padding: 20px 0;
+  border-bottom: 4px solid #66fcf1;
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+header .logo {
+  font-size: 1.5em;
+  color: #66fcf1;
+  text-shadow: 2px 2px #0b0c10;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #66fcf1;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #45a29e;
+  text-shadow: 0 0 5px #45a29e;
+}
+
+.hero {
+  background: url('https://i.imgur.com/kd3X2vU.png') center/cover no-repeat;
+  padding: 120px 20px;
+  text-align: center;
+  color: #45a29e;
+  text-shadow: 2px 2px #0b0c10;
+}
+
+.hero h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #45a29e;
+  color: #0b0c10;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #66fcf1;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #66fcf1;
+  margin-bottom: 40px;
+}
+
+.services, .team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.service, .member {
+  flex: 1 1 300px;
+  background: #1f2833;
+  border: 3px solid #45a29e;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+}
+
+.service h3, .member h4 {
+  margin: 20px 0 10px;
+  color: #66fcf1;
+  text-shadow: 1px 1px #0b0c10;
+}
+
+.member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #45a29e;
+}
+
+footer {
+  background: #1f2833;
+  color: #c5c6c7;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 4px solid #66fcf1;
+}
+
+footer a {
+  color: #45a29e;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #66fcf1;
+}
+
+@media (max-width: 768px) {
+  .services, .team {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -50,64 +171,56 @@
 </header>
 
 <section class="hero" id="inicio">
-  <h1>Formación Tecnológica de Vanguardia</h1>
-  <p>En Vitvisor combinamos experiencia, innovación y pasión para formar especialistas en sistemas microinformáticos, redes y nuevas tecnologías. Únete a nuestra comunidad y da el salto al siguiente nivel.</p>
+  <h1>Vitvisor Retro-Gamer</h1>
+  <p>Aprende tecnología con estilo pixel. Sumérgete en redes, programación y soporte con la vibra de los videojuegos clásicos.</p>
   <a class="btn" href="#servicios">Nuestros Servicios</a>
 </section>
 
 <section id="servicios">
-  <div class="container">
-    <h2>Qué ofrecemos</h2>
-    <div class="services">
-      <div class="service">
-        <h3>Formación en Redes y Sistemas</h3>
-        <p>Profundizamos en sistemas microinformáticos, redes, mantenimiento, virtualización y más con un enfoque práctico.</p>
-      </div>
-      <div class="service">
-        <h3>Desarrollo Web y Programación</h3>
-        <p>Desde HTML/CSS hasta frameworks modernos. Aprenderás a crear sitios, apps y servicios reales.</p>
-      </div>
-      <div class="service">
-        <h3>Consultoría y Soporte Técnologico</h3>
-        <p>Servicios de asesoría tecnológica, auditoría de sistemas y soporte para empresas que quieren digitalizarse.</p>
-      </div>
+  <h2>Servicios Retro</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Redes & Sistemas</h3>
+      <p>Configura redes y sistemas con un toque gamer, aprende desde la consola hasta la virtualización avanzada.</p>
+    </div>
+    <div class="service">
+      <h3>Desarrollo Web</h3>
+      <p>Diseña páginas y apps con estética retro, aprendiendo HTML, CSS y JS de manera práctica y divertida.</p>
+    </div>
+    <div class="service">
+      <h3>Consultoría Tech</h3>
+      <p>Asesora empresas y optimiza sistemas con estrategia, ¡como un verdadero jefe final de IT!</p>
     </div>
   </div>
 </section>
 
 <section id="equipo">
-  <div class="container">
-    <h2>Nuestro Equipo</h2>
-    <div class="team">
-      <div class="member">
-        <img src="https://via.placeholder.com/150" alt="Sergio de Paz">
-        <h4>Sergio de Paz</h4>
-        <p>Fundador y Formador Principal</p>
-      </div>
-      <div class="member">
-        <img src="https://via.placeholder.com/150" alt="SysBoos">
-        <h4>SysBoos</h4>
-        <p>Inteligencia de Apoyo y Desarrollo</p>
-      </div>
+  <h2>Equipo Pixel</h2>
+  <div class="team">
+    <div class="member">
+      <img src="https://via.placeholder.com/150" alt="Sergio de Paz">
+      <h4>Sergio de Paz</h4>
+      <p>Fundador y Formador Principal</p>
+    </div>
+    <div class="member">
+      <img src="https://via.placeholder.com/150" alt="SysBoos">
+      <h4>SysBoos</h4>
+      <p>IA de Apoyo y Desarrollo</p>
     </div>
   </div>
 </section>
 
 <section id="contacto">
-  <div class="container">
-    <h2>Contacto</h2>
-    <p>¿Tienes preguntas o quieres colaborar con nosotros? Escríbenos y estaremos encantados de responderte.</p>
-    <p><strong>Email:</strong> contacto@vitvisor.com</p>
-    <p><strong>Teléfono:</strong> +34 600 000 000</p>
-    <a class="btn" href="mailto:contacto@vitvisor.com">Envíanos un email</a>
-  </div>
+  <h2>Contacto Retro</h2>
+  <p>¿Tienes dudas o quieres unirte a la aventura? Escríbenos y responderemos con velocidad pixel.</p>
+  <p><strong>Email:</strong> contacto@vitvisor.com</p>
+  <p><strong>Teléfono:</strong> +34 600 000 000</p>
+  <a class="btn" href="mailto:contacto@vitvisor.com">Enviar Email</a>
 </section>
 
 <footer>
-  <div class="container">
-    <p>© 2025 Vitvisor. Todos los derechos reservados.</p>
-    <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Uso</a></p>
-  </div>
+  <p>© 2025 Vitvisor – Todos los derechos reservados.</p>
+  <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Uso</a></p>
 </footer>
 
 </body>
