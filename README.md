@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vitvisor – Formación Retro-Gamer</title>
+<title>Vitvisor – Retro-Gamer Tech</title>
 <style>
 /* Fuente retro */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
@@ -100,23 +100,29 @@ h2 {
   margin-bottom: 40px;
 }
 
-.services, .team {
+.services, .team, .noticias-list {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
 }
 
-.service, .member {
+.service, .member, .noticia {
   flex: 1 1 300px;
   background: #1f2833;
   border: 3px solid #45a29e;
   border-radius: 8px;
   padding: 30px;
   text-align: center;
+  transition: 0.3s;
 }
 
-.service h3, .member h4 {
+.service:hover, .member:hover, .noticia:hover {
+  background: #0b0c10;
+  border-color: #66fcf1;
+}
+
+.service h3, .member h4, .noticia h3 {
   margin: 20px 0 10px;
   color: #66fcf1;
   text-shadow: 1px 1px #0b0c10;
@@ -147,7 +153,7 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
-  .services, .team {
+  .services, .team, .noticias-list {
     flex-direction: column;
     align-items: center;
   }
@@ -164,6 +170,7 @@ footer a:hover {
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#equipo">Equipo</a></li>
+        <li><a href="#noticias">Noticias</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -181,11 +188,11 @@ footer a:hover {
   <div class="services">
     <div class="service">
       <h3>Redes & Sistemas</h3>
-      <p>Configura redes y sistemas con un toque gamer, aprende desde la consola hasta la virtualización avanzada.</p>
+      <p>Configura routers, switches y redes virtuales con nuestro módulo retro. ¡Nivel Boss desbloqueado!</p>
     </div>
     <div class="service">
       <h3>Desarrollo Web</h3>
-      <p>Diseña páginas y apps con estética retro, aprendiendo HTML, CSS y JS de manera práctica y divertida.</p>
+      <p>Diseña páginas y apps con estética pixel-art, aprendiendo HTML, CSS y JS de manera práctica y divertida.</p>
     </div>
     <div class="service">
       <h3>Consultoría Tech</h3>
@@ -206,6 +213,27 @@ footer a:hover {
       <img src="https://via.placeholder.com/150" alt="SysBoos">
       <h4>SysBoos</h4>
       <p>IA de Apoyo y Desarrollo</p>
+    </div>
+  </div>
+</section>
+
+<section id="noticias">
+  <h2>Últimas Entradas</h2>
+  <div class="noticias-list">
+    <div class="noticia">
+      <h3>Nuevo Curso de Redes Pixeladas</h3>
+      <p>Aprende a configurar routers, switches y redes virtuales con nuestro nuevo módulo retro. ¡Nivel Boss desbloqueado!</p>
+      <a class="btn" href="#">Leer Más</a>
+    </div>
+    <div class="noticia">
+      <h3>Tips de Programación Retro</h3>
+      <p>Trucos y hacks para dominar HTML, CSS y JavaScript con un estilo pixel-art que recuerda los 80s.</p>
+      <a class="btn" href="#">Leer Más</a>
+    </div>
+    <div class="noticia">
+      <h3>Soporte Tech Arcade</h3>
+      <p>Atención a problemas de sistemas con estrategias tipo juego: cada fallo es un mini-jefe a superar.</p>
+      <a class="btn" href="#">Leer Más</a>
     </div>
   </div>
 </section>
